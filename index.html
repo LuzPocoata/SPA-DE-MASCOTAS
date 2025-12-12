@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spa de Mascotas</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav id="barra-navegacion">
+        <div class="logo">
+            <img src="imagenes\LogoPet.jpg" alt="Logo Spa" class="icon-nav"> 
+            <span>SPA DE MASCOTAS</span>
+        </div>
+        <div class="enlaces-nav" id="enlaces-nav">
+            </div>
+        <div class="seccion-usuario" id="seccion-usuario">
+            </div>
+    </nav>
+    <section id="seccion-login" class="modulo activo">
+        <div class="contenedor-login">
+            <h2>
+                <img src="imagenes\logopata.jpg" alt="Candado" class="icon-h2">
+                Iniciar Sesión
+            </h2>
+            <form id="formulario-login">
+                <div class="grupo-formulario">
+                    <label for="campo-usuario">Usuario:</label>
+                    <input type="text" id="campo-usuario" placeholder="Ingresa tu usuario" required>
+                </div>
+                <div class="grupo-formulario">
+                    <label for="campo-contrasena">Contraseña:</label>
+                    <div class="contenedor-contrasena">
+                        <input type="password" id="campo-contrasena" placeholder="Ingresa tu contraseña" required>
+                        <span class="alternar-contrasena" id="alternar-contrasena">👁️</span>
+                    </div>
+                </div>
+                <button type="submit" class="boton-ingresar">
+                    ➡️ Ingresar al Sistema
+                </button>
+            </form>
+        </div>
+    </section>
+    <section id="seccion-registro" class="modulo">
+        <h2>
+            <img src="imagenes\Registro1.jpg" alt="Registro" class="icon-h2">
+            Registro de Dueños y Mascotas
+        </h2>
+        <div class="contenedor-formularios">
+            <div class="tarjeta-formulario">
+                <h3>
+                    <img src="imagenes\Dueño.jpg" alt="Icono Dueño" class="icon-h3">
+                    Dueño
+                </h3>
+                <form id="formulario-dueno">
+                    <div class="grupo-formulario">
+                        <label for="nombre-dueno">Nombre completo:</label>
+                        <input type="text" id="nombre-dueno" placeholder="Ingresa tu Nombre" required>
+                    </div>
+                    <div class="grupo-formulario">
+                        <label for="telefono-dueno">Teléfono:</label>
+                        <div class="contenedor-telefono">
+                            <span class="prefijo-telefono">+591</span>
+                            <input type="tel" id="telefono-dueno" placeholder="Ingresa tu Telefono" required>
+                        </div>
+                    </div>
+                    <div class="grupo-formulario">
+                        <label for="correo-dueno">Correo electrónico:</label>
+                        <input type="email" id="correo-dueno" placeholder="Ingresa tu Correo" required>
+                    </div>
+                    <button type="submit" class="boton-guardar">
+                        💾 Registrar Dueño
+                    </button>
+                </form>
+                <div id="lista-duenos" class="contenedor-lista">
+                    <h4>Dueños registrados:</h4>
+                    <ul id="lista-de-duenos"></ul>
+                </div>
+            </div>
+            <div class="tarjeta-formulario">
+                <h3>
+                    <img src="imagenes\Mascotas1.jpg" alt="Icono Mascota" class="icon-h3">
+                    Mascota
+                </h3>
+                <form id="formulario-mascota">
+                    <div class="grupo-formulario">
+                        <label for="nombre-mascota">Nombre de la mascota:</label>
+                        <input type="text" id="nombre-mascota" placeholder="Ingresa el Nombre de tu Mascota" required>
+                    </div>
+                    <div class="grupo-formulario">
+                        <label for="especie-mascota">Especie:</label>
+                        <select id="especie-mascota" required>
+                            <option value="">Selecciona una especie</option>
+                            <option value="Perro">Perro</option>
+                            <option value="Gato">Gato</option>
+                            <option value="Ave">Ave</option>
+                            <option value="Roedor">Roedor</option>
+                            <option value="Otro">Otro</option>
+                        </select>
+                    </div>
+                    <div class="grupo-formulario">
+                        <label for="raza-mascota">Raza:</label>
+                        <input type="text" id="raza-mascota" placeholder="Ingresa la Raza de tu Mascota" required>
+                    </div>
+                    <button type="submit" class="boton-guardar">
+                        💾 Registrar Mascota
+                    </button>
+                </form>
+                <div id="lista-mascotas" class="contenedor-lista">
+                    <h4>Mascotas registradas:</h4>
+                    <ul id="lista-de-mascotas"></ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="seccion-agenda" class="modulo">
+        <h2>
+            <img src="imagenes\Calendario.jpg" alt="Calendario" class="icon-h2">
+            Agenda de Servicios
+        </h2>        
+        <div class="contenedor-formularios">
+            <div class="tarjeta-formulario ancho-completo">
+                <h3>
+                    <img src="imagenes\Reloj.jpg" alt="Reloj" class="icon-h3">
+                    Nuevo Servicio
+                </h3>
+                <form id="formulario-cita">
+                    <div class="fila-formulario">
+                        <div class="grupo-formulario">
+                            <label for="fecha-cita">Fecha:</label>
+                            <input type="date" id="fecha-cita" required>
+                        </div>
+                        <div class="grupo-formulario">
+                            <label for="hora-cita">Hora:</label>
+                            <input type="time" id="hora-cita" required>
+                        </div>
+                    </div>
+                    <div class="fila-formulario">
+                        <div class="grupo-formulario">
+                            <label for="mascota-cita">Mascota:</label>
+                            <select id="mascota-cita" required>
+                                <option value="">Selecciona una mascota</option>
+                            </select>
+                        </div>
+                        <div class="grupo-formulario">
+                            <label for="servicio-cita">Servicio:</label>
+                            <select id="servicio-cita" required>
+                                <option value="">Selecciona un servicio</option>
+                                <option value="Baño completo">Baño completo</option>
+                                <option value="Corte de pelo">Corte de pelo</option>
+                                <option value="Corte de uñas">Corte de uñas</option>
+                                <option value="Spa completo">Spa completo</option>
+                                <option value="Consulta veterinaria">Consulta veterinaria</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button type="submit" class="boton-guardar">
+                        ➕ Agendar Servicio
+                    </button>
+                </form>                
+                <div id="lista-citas" class="contenedor-lista">
+                    <h4>Servicios agendados:</h4>
+                    <table id="tabla-citas">
+                        <thead>
+                            <tr>
+                                <th>Fecha</th>
+                                <th>Hora</th>
+                                <th>Mascota</th>
+                                <th>Servicio</th>
+                            </tr>
+                        </thead>
+                        <tbody id="cuerpo-tabla-citas">
+                            </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="seccion-tienda" class="modulo">
+        <h2>
+            <img src="imagenes\CarritoCompras1.jpg" alt="Carrito de compras" class="icon-h2">
+            Carrito de Compras
+        </h2>
+        <div class="contenedor-tienda">
+            <div class="contenedor-catalogo">
+                <h3>
+                    <img src="imagenes\Catalogo.jpg" alt="Bolsa de compras" class="icon-h3">
+                    Catálogo de Productos
+                </h3>
+                <div class="rejilla-productos" id="rejilla-productos"></div>
+            </div>            
+            <div class="contenedor-carrito">
+                <h3>
+                    <img src="imagenes\CarritodeCompras2.jpg" alt="Carrito" class="icon-h3">
+                    Tu Carrito
+                </h3>
+                <div class="items-carrito" id="items-carrito">
+                    <p class="carrito-vacio">El carrito está vacío</p>
+                </div>
+                <div class="totales-carrito">
+                    <div class="fila-total">
+                        <span>Subtotal:</span>
+                        <span id="subtotal">Bs. 0.00</span>
+                    </div>
+                    <div class="fila-total">
+                        <span>Total:</span>
+                        <span id="total">Bs. 0.00</span>
+                    </div>
+                </div>
+                <button class="boton-finalizar" id="boton-finalizar">
+                    💳 Finalizar Compra
+                </button>
+            </div>
+        </div>
+    </section>
+    <script src="js/app.js"></script>
+    <footer>
+        <p>Gracias por visitar mi pagina =^.^= ... </p>
+        <p>❤️❤️❤️🐾🐾 ADORAMOS A LAS MASCOTAS 🐾🐾❤️❤️❤️</p>
+        &copy; 2025 Mi Sitio Web =n.n= . Todos los derechos reservados. <br>
+        Contacto: <a href="https://Wa.me/+59178085139">Algun problema-Contactanos</a>
+    </footer>
+</body>
+</html>
+
+
